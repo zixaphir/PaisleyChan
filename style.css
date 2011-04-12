@@ -1,5 +1,9 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
+@-moz-document domain(sys.4chan.org) {
+body {background: "#333" !important; }
+}
+
 @-moz-document domain("boards.4chan.org") {
 /* GLOBAL */
 
@@ -895,21 +899,34 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea form:first-child {
     position: fixed;
     top: auto;
-    left: -280px;
+    left: -4px;
     right: auto;
     bottom: 40px;
     z-index: 995;
     margin: 0 !important;
-    -webkit-transition: right .3s ease-in-out 3s;
-    -moz-transition: right .3s ease-in-out 3s;
-    -o-transition: right .3s ease-in-out 3s;
+    -webkit-transition: all .3s ease-in-out 3s;
+    -moz-transition: all .3s ease-in-out 3s;
+    -o-transition: all .3s ease-in-out 3s;
+    opacity: .25;
   }
 
+  .postarea form:first-child .recaptchatable img {
+    -webkit-transition: all .3s ease-in-out 3s;
+    -moz-transition: all .3s ease-in-out 3s;
+    -o-transition: all .3s ease-in-out 3s;
+    opacity: .1;
+  }
   .postarea form:first-child:hover {
-    left: -4px;
-    -webkit-transition: left .3s linear;
-    -moz-transition: left .3s linear;
-    -o-transition: left .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    opacity: 1;
+  }
+  .postarea form:first-child:hover .recaptchatable img {
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    opacity: .5;
   }
 
   #com_submit,
@@ -960,16 +977,17 @@ span.commentpostername, span.postername, span.postertrip {
     vertical-align: middle;
   }
 
-  .postarea input[type="file"],
-  #quickrep input[type="file"] {
-    -moz-appearance: none;
-    background: transparent;
-    border-color: #aaa;
-    border-width: 1px !important;
-    border-style: solid !important;
-    height: 19px !important;
-    padding: 0 !important;
-  }
+.postarea input[type="file"],
+#quickrep input[type="file"] {
+-moz-appearance: none;
+background: transparent;
+border-color: #aaa;
+border-width: 1px !important;
+border-style: solid !important;
+height: 20px !important;
+padding: 0 !important;
+margin-top: -1px !important;
+}
 
   .postarea textarea.inputtext,
   textarea#message {
@@ -1026,10 +1044,17 @@ span.commentpostername, span.postername, span.postertrip {
     padding: 0 !important;
   }
 
+
   .postarea .recaptcha_image_cell>center>#recaptcha_image {
-    border-color: #aaa;
+    border-color: rgba(52, 56, 56, 0.75) !important;
     border-width: 1px !important;
     border-style: solid !important;
+    background: #1A1A1A !important;
+  }
+
+
+  .postarea:hover .recaptcha_image_cell>center>#recaptcha_image {
+    border-color: #aaa !important;
   }
 
   .postarea .recaptchatable #recaptcha_response_field {
