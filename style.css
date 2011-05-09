@@ -103,20 +103,20 @@ select:focus {
   font-size: 10px !important;
   text-transform: lowercase !important;
 }
-form[name="delform"] div:not(.thread),
-form[name="delform"] div:not(.thread) select,
-form[name="delform"] div:not(.thread) option {
+body > table ~ form[name="delform"] div:not(.thread),
+body > table ~ form[name="delform"] div:not(.thread) select,
+body > table ~ form[name="delform"] div:not(.thread) option {
   font-size: 10px !important;
   color: #bbb !important;
   text-transform: lowercase !important;
 }
-form[name="delform"] div:not(.thread) select {
+body > table ~ form[name="delform"] div:not(.thread) select {
   padding: 2px !important;
   text-align: center !important;
   border: 1px solid #AAAAAA !important;
 }
 
-form[name="delform"] div:not(.thread) label {
+body > table ~ form[name="delform"] div:not(.thread) label {
   font-size: 9px !important;
   text-transform: uppercase !important;
   color: #aaa !important;
@@ -287,7 +287,6 @@ a:hover {
 .postarea {
   text-align: right !important;
   position: fixed !important;
-  right: 10px !important;
 }
 .postarea form {
   float: right !important;
@@ -314,14 +313,14 @@ a:hover {
 .postarea tr:nth-of-type(5) .postblock b {
   display: none !important;
 }
-form[name="delform"] div:not(.thread)  {
+body > table ~ form[name="delform"] div:not(.thread)  {
   position: fixed !important;
   float: right !important;
   margin-top: -32px !important;
   margin-left: -300px !important;
   z-index: 999 !important;
 }
-form[name="delform"] div:not(.thread) select {
+body > table ~ form[name="delform"] div:not(.thread) select {
   padding: 0px !important;
   border-color: #333 !important;
   float: left !important;
@@ -337,7 +336,7 @@ form[name="delform"] div:not(.thread) label {
   display: block !important;
   float: left !important;
 }
-form[name="delform"] div:not(.thread) label input {
+body > table ~ form[name="delform"] div:not(.thread) label input {
   float: left !important;
   display: block !important;
   padding: 0px !important;
@@ -404,18 +403,23 @@ form[name="delform"] table a img/*[width="251"]*/ {
   clear: left !important;
   float: left !important;
 }
-form[name="delform"] div:not(.thread),
+body > table ~ form[name="delform"] div:not(.thread),
 #header,
 .pages,
 form[name="delform"] table[align="right"] {
   -moz-transition: all 0.5s ease;
   opacity: 0.45;
 }
-form[name="delform"] div:not(.thread):hover,
+body > table ~form[name="delform"] div:not(.thread):hover,
 #header:hover,
 form[name="delform"] table.pages:hover,
 form[name="delform"] table[align="right"]:hover {
   opacity: 1;
+}
+body > table ~ form[name="delform"] div:not(.thread):not(:hover) {
+max-width: 300px !important;
+max-height: 200px !important;
+overflow: hidden !important;
 }
 #header {
   background: rgba(25, 25, 25, 0.95) !important;
@@ -515,10 +519,10 @@ form[name="delform"] table[align="right"] td input:hover {
 form[name="delform"] div:not(.thread) {
   margin-top: -30px !important;
 }
-form[name="delform"] div:not(.thread) select {
+body > table ~ form[name="delform"] div:not(.thread) select {
   border: 0px !important;
 }
-form[name="delform"] div:not(.thread) select option {
+body > table ~ form[name="delform"] div:not(.thread) select option {
   font-size: 9px !important;
   border: 0px !important;
 }
@@ -526,18 +530,18 @@ form[name="delform"] div:not(.thread) label {
   margin-top: 2px !important;
   font-size: 0px !important;
 }
-form[name="delform"] div:not(.thread) label input {
+body > table ~ form[name="delform"] div:not(.thread) label input {
   margin-top: 1px !important;
   width: 9px !important;
   height: 9px !important;
   cursor: pointer;
 }
-form[name="delform"] div:not(.thread) label::after {
+body > table ~ form[name="delform"] div:not(.thread) label::after {
   font-size: 9px !important;
   content: "expand";
   -moz-transition: all 0.5s ease;
 }
-form[name="delform"] div:not(.thread) label:hover::after {
+body > table ~ form[name="delform"] div:not(.thread) label:hover::after {
   text-decoration: underline !important;
   color: #80ACCE !important;
   -moz-transition: all 0.5s ease;
@@ -608,10 +612,6 @@ form[name="delform"] table blockquote {
   min-height: 20px;
   padding-top: 10px !important;
   clear: none;
-}
-
-table a[href^="http://images.4chan.org"] + blockquote {
-  margin-top: -12px !important;
 }
 
 td.doubledash {
@@ -835,15 +835,12 @@ span.commentpostername, span.postername, span.postertrip {
     display: block !important;
     position: fixed !important;
     left: 17px !important;
-    top: 310px !important;
+    top: 140px !important;
     width: 250px !important;
     font-size: 12px !important;
     font-weight: bold !important;
     letter-spacing: 3px !important;
     background: transparent !important;
-  }
-  body > table ~ form[name="delform"] table a[href^="http://images.4chan.org"] + blockquote {
-    margin-top: -12px !important;
   }
 }
 
@@ -860,8 +857,8 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea textarea.inputtext,
   textarea#message,
   .postarea input[type=submit],
-  form[name="delform"] div:not(.thread) select,
-  form[name="delform"] div:not(.thread) input
+ body > table ~ form[name="delform"] div:not(.thread) select,
+ body > table ~ form[name="delform"] div:not(.thread) input
    {
     -moz-appearance: none;
   }
