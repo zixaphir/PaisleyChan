@@ -847,11 +847,9 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea input[type=password],
   .postarea input[type=file],
   .postarea textarea.inputtext,
-  textarea#message,
   .postarea input[type=submit],
- body > table ~ form[name="delform"] div select,
- body > table ~ form[name="delform"] div input
-   {
+  body > table ~ form[name="delform"] div select,
+  body > table ~ form[name="delform"] div input {
     -moz-appearance: none;
   }
 
@@ -865,8 +863,7 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea td[style="padding: 10px 7px 7px;"],
   .postarea td[style="padding: 18px 7px;"],
   .postarea #recaptcha_logo,
-  .postarea #recaptcha_tagline/*,
-  .postarea .postblock*/ {
+  .postarea #recaptcha_tagline {
     display: none !important;
   }
 
@@ -910,12 +907,6 @@ span.commentpostername, span.postername, span.postertrip {
     opacity: .5;
   }
 
-  #com_submit,
-  .postarea input[type=file] > input[type=button],
-  .postarea input[name="upfile"] {
-    /* font: 200 7pt "Verdana" !important; */
-  }
-
   .postarea input.inputtext,
   .postarea input[type=file][name="upfile"] > input[type=text],
   .postarea input[type=file] > input[type=button],
@@ -925,7 +916,7 @@ span.commentpostername, span.postername, span.postertrip {
     -webkit-appearance: none;
     width: 302px !important;
     height: 19px !important;
-    padding: 1px 0 !important;
+    padding: 1px !important;
     z-index: 1;
   }
 
@@ -955,8 +946,7 @@ span.commentpostername, span.postername, span.postertrip {
     vertical-align: middle;
   }
 
-  .postarea input[type="file"],
-  #quickrep input[type="file"] {
+  .postarea input[type="file"] {
     -moz-appearance: none;
     background: transparent;
     padding: 0 !important;
@@ -976,34 +966,20 @@ span.commentpostername, span.postername, span.postertrip {
     padding: 0 !important;
   }
 /* Spoiler Image Checkbox */
-  html>body>.postarea>form>table>tbody>tr:nth-of-type(3)>td:nth-of-type(3) {
+  .postarea form[name="post"] tr:nth-of-type(3) td:not(.postblock) {
     font-size: 0 !important;
   }
 
-  html>body>.postarea>form>table>tbody>tr:nth-of-type(3)>td:nth-of-type(3)>label {
+  .postarea form[name="post"] tr:nth-of-type(3) label {
     position: fixed;
     font-size: 10pt !important;
     top: auto;
     left: auto;
     bottom: 63px;
-  }
-
-  html>body>.postarea:hover>form>table>tbody>tr:nth-of-type(3)>td:nth-of-type(3)>label,
-  div.postarea:hover #autonoko {
     right: 10px;
-    -webkit-transition: right .3s linear;
-    -moz-transition: right .3s linear;
-    -o-transition: right .3s linear;
   }
 
-  html>body>.postarea:not(:hover)>form>table>tbody>tr:nth-of-type(3)>td:nth-of-type(3)>label,
-  div.postarea:not(:hover) #autonoko {
-    right: -240px;
-    -webkit-transition: right .3s ease-in-out 3s;
-    -moz-transition: right .3s ease-in-out 3s;
-    -o-transition: right .3s ease-in-out 3s;
-  }
-
+  .postarea .recaptcha_input_area,
   .postarea td.recaptcha_image_cell,
   td[style="padding-left: 7px;"] {
     padding: 0 !important;
@@ -1017,10 +993,6 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea .recaptchatable #recaptcha_image {
     border: 1px solid rgba(52, 56, 56, 0.75) !important;
     margin-top: 1px !important;
-  }
-
-  .postarea .recaptcha_input_area {
-    padding: 0 !important;
   }
 
   .postarea tr[height="73"],
