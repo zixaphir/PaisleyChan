@@ -554,9 +554,6 @@ body > table ~ form[name="delform"] div label:hover::after {
   border-radius: 0px 8px 0px 0px;
   -moz-border-radius: 0px 8px 0px 0px; 
 }
-.postarea input[name="upfile"] {
-  margin-left: -1px !important;
-}
 
 /* INDIVIDUAL POSTS */
 .reply,
@@ -872,17 +869,18 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea .postblock*/ {
     display: none !important;
   }
-/* Post Form */
-  .postarea form:not(#newform) {
-    max-width: 307px !important;
-    min-width: 307px !important;
-    padding-left: 5px;
+
+  .postarea table {
+    border-collapse: collapse !important;
   }
 
-  .postarea form:first-child {
+/* Post Form */
+  .postarea form[name="post"] {
+    width: 302px !important;
+    padding-left: 5px;
     position: fixed;
     top: auto;
-    left: -4px;
+    left: -1px;
     right: auto;
     bottom: 40px;
     z-index: 995;
@@ -893,19 +891,19 @@ span.commentpostername, span.postername, span.postertrip {
     opacity: .25;
   }
 
-  .postarea form:first-child .recaptchatable img {
+  .postarea form[name="post"] .recaptchatable img {
     -webkit-transition: all .3s ease-in-out 3s;
     -moz-transition: all .3s ease-in-out 3s;
     -o-transition: all .3s ease-in-out 3s;
     opacity: .1;
   }
-  .postarea form:first-child:hover {
+  .postarea form[name="post"]:hover {
     -webkit-transition: all .3s linear;
     -moz-transition: all .3s linear;
     -o-transition: all .3s linear;
     opacity: 1;
   }
-  .postarea form:first-child:hover .recaptchatable img {
+  .postarea form[name="post"]:hover .recaptchatable img {
     -webkit-transition: all .3s linear;
     -moz-transition: all .3s linear;
     -o-transition: all .3s linear;
@@ -918,8 +916,7 @@ span.commentpostername, span.postername, span.postertrip {
     /* font: 200 7pt "Verdana" !important; */
   }
 
-  .postarea input[type=text],
-  .postarea input[type=password],
+  .postarea input.inputtext,
   .postarea input[type=file][name="upfile"] > input[type=text],
   .postarea input[type=file] > input[type=button],
   .postarea textarea.inputtext  {
@@ -930,9 +927,11 @@ span.commentpostername, span.postername, span.postertrip {
     border-style: solid !important;
     width: 302px !important;
     height: 19px !important;
-    padding: 1px 0 1px 0 !important;
+    margin-top: 1px !important;
+    padding: 1px 0 !important;
     z-index: 1;
   }
+
   body .postarea input[type=file] > input[type=button],
   body .postarea input[type=submit] {
     color: #50565C !important;
@@ -947,7 +946,7 @@ span.commentpostername, span.postername, span.postertrip {
   body .postarea input[name="sub"],
   .postarea input[type=file][name="upfile"] > input[type=text] {
     width: 251px !important;
-    margin: 0 1px 0 0 !important;
+    margin-right: 1px !important;
     vertical-align: middle;
   }
 
@@ -955,22 +954,16 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea input[type=file] > input[type=button] {
     width: 50px !important;
     height: 19px !important;
-    margin: 0 0 0 0 !important;
     padding: 0 !important;
     vertical-align: middle;
   }
 
-.postarea input[type="file"],
-#quickrep input[type="file"] {
--moz-appearance: none;
-background: transparent;
-border-color: #aaa;
-border-width: 1px !important;
-border-style: solid !important;
-height: 20px !important;
-padding: 0 !important;
-margin-top: -1px !important;
-}
+  .postarea input[type="file"],
+  #quickrep input[type="file"] {
+    -moz-appearance: none;
+    background: transparent;
+    padding: 0 !important;
+  }
 
   .postarea textarea.inputtext,
   textarea#message {
@@ -1028,7 +1021,7 @@ margin-top: -1px !important;
   }
 
 
-  .postarea .recaptcha_image_cell>center>#recaptcha_image {
+  .postarea .recaptchatable #recaptcha_image {
     border-color: rgba(52, 56, 56, 0.75) !important;
     border-width: 1px !important;
     border-style: solid !important;
@@ -1036,7 +1029,7 @@ margin-top: -1px !important;
   }
 
 
-  .postarea:hover .recaptcha_image_cell>center>#recaptcha_image {
+  .postarea:hover .recaptchatable #recaptcha_image {
     border-color: #aaa !important;
   }
 
