@@ -919,15 +919,12 @@ span.commentpostername, span.postername, span.postertrip {
   .postarea input.inputtext,
   .postarea input[type=file][name="upfile"] > input[type=text],
   .postarea input[type=file] > input[type=button],
-  .postarea textarea.inputtext  {
+  .postarea textarea.inputtext,
+  .postarea .recaptchatable input {
     -moz-appearance: none;
     -webkit-appearance: none;
-    border-color: rgba(52, 56, 56, 0.75) !important;
-    border-width: 1px !important;
-    border-style: solid !important;
     width: 302px !important;
     height: 19px !important;
-    margin-top: 1px !important;
     padding: 1px 0 !important;
     z-index: 1;
   }
@@ -965,21 +962,13 @@ span.commentpostername, span.postername, span.postertrip {
     padding: 0 !important;
   }
 
-  .postarea textarea.inputtext,
-  textarea#message {
+  .postarea textarea.inputtext {
     height: auto !important;
     font-size: 10pt !important;
   }
 
-  .postarea textarea#message {
-    width: 302px !important;
-  }
-
   .postarea input[type=submit] {
     -moz-appearance: none;
-    border-color: #aaa;
-    border-width: 1px !important;
-    border-style: solid !important;
   }
 
   .postarea td, .reply td {
@@ -1014,36 +1003,29 @@ span.commentpostername, span.postername, span.postertrip {
     -moz-transition: right .3s ease-in-out 3s;
     -o-transition: right .3s ease-in-out 3s;
   }
-/* Captcha */
+
   .postarea td.recaptcha_image_cell,
   td[style="padding-left: 7px;"] {
     padding: 0 !important;
   }
 
-
+  .postarea input.inputtext,
+  .postarea input[type=file][name="upfile"] > input[type=text],
+  .postarea input[type=file] > input[type=button],
+  .postarea textarea.inputtext,
+  .postarea .recaptchatable input,
   .postarea .recaptchatable #recaptcha_image {
-    border-color: rgba(52, 56, 56, 0.75) !important;
-    border-width: 1px !important;
-    border-style: solid !important;
-    background: #1A1A1A !important;
-  }
-
-
-  .postarea:hover .recaptchatable #recaptcha_image {
-    border-color: #aaa !important;
-  }
-
-  .postarea .recaptchatable #recaptcha_response_field {
-    border-color: #aaa;
-    border-width: 1px !important;
-    border-style: solid !important;
+    border: 1px solid rgba(52, 56, 56, 0.75) !important;
+    margin-top: 1px !important;
   }
 
   .postarea .recaptcha_input_area {
-    padding: 2px 0 0 0 !important;
+    padding: 0 !important;
   }
 
-  .postarea tr[height="73"], tr[height="73"] td {
-    height: 59px !important;
+  .postarea tr[height="73"],
+  .postarea tr[height="73"] td,
+  .postarea .recaptchatable .recaptcha_image_cell center  {
+    height: auto !important;
   }
 }
