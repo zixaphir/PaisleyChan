@@ -846,11 +846,6 @@ span.commentpostername, span.postername, span.postertrip {
 
 
 @-moz-document domain("4chan.org") {
-
-/* OPTIONS */
-/* UNCOMMENT BEFORE CHANGING OPTIONS, THEN --
-  IF FOR ANY REASON THESE OPTIONS ARE NOT WORKING FOR YOU, ADD
-    !important TO THE END OF THE OPTION, BEFORE THE SEMICOLON (;) */
   .postarea input[type=text],
   .postarea input[type=password],
   .postarea input[type=file],
@@ -861,15 +856,6 @@ span.commentpostername, span.postername, span.postertrip {
  body > table ~ form[name="delform"] div input
    {
     -moz-appearance: none;
-  }
-
-/* IF FOR ANY REASON THESE OPTIONS ARE NOT WORKING FOR YOU, ADD
-    !important TO THE END OF THE OPTION, BEFORE THE SEMICOLON (;) */
-/* END OF OPTIONS */
-
-/* Style Compatibility Hack (overrides styles which make the postarea invisibible) */
-  html>body>div.postarea {
-    opacity: 1 !important;
   }
 
 /* Post Form Cleanup */
@@ -993,7 +979,7 @@ margin-top: -1px !important;
   }
 
   .postarea textarea#message {
-    width: 302px !important
+    width: 302px !important;
   }
 
   .postarea input[type=submit] {
